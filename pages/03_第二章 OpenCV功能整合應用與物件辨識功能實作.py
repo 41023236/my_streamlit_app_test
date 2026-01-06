@@ -16,7 +16,7 @@ st.markdown("""
 st.header("2.1 RL建模與訓練：結果展示")
 sample_video = open("image/1.mp4", "rb").read()
 # Display Video using st.video() function
-st.video(sample_video, start_time = 10)
+st.video(sample_video, start_time = 0)
 
 st.subheader("""main.py Code""")
 code = '''"""
