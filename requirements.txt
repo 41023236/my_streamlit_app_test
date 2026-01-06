@@ -6,3 +6,4 @@ openpyxl
 opencv-python-headless
 Pillow
 matplotlib
+streamlit-webrtc
