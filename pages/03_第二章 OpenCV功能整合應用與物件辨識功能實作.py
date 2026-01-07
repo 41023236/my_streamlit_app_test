@@ -13,6 +13,11 @@ st.markdown("""
 </ol>
 """, unsafe_allow_html=True)
 
+st.header("實際wecam辨識結果影片")
+sample_video = open("image/31.mp4", "rb").read()
+# Display Video using st.video() function
+st.video(sample_video, start_time = 0)
+
 st.header("2.1 RL建模與訓練")
 sample_video = open("image/1.mp4", "rb").read()
 # Display Video using st.video() function

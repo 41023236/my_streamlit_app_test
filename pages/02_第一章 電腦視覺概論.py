@@ -2,10 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 # import openpyxl
-import xlrd
-
-import cv2
-from streamlit_webrtc import webrtc_streamer, WebRtcMode
 
 
 # 在這裡添加實驗一的具體內容，如圖表、數據等

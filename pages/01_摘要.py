@@ -2,10 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 # import openpyxl
-import xlrd
 
-import cv2
-from streamlit_webrtc import webrtc_streamer, WebRtcMode
 
 
 st.title("摘要")
@@ -25,35 +22,3 @@ st.write("隨著人工智慧與深度學習技術的成熟，電腦視覺已被�
 
 
 # ==================================================================
-
-# 利用 Streamlit 顯示即時攝影機影像的步驟與範例 Python 程式碼：
-# 記得安裝opencv-python, streamlit_webrtc套件
-def main():
-    st.title("即時 Webcam 影像顯示")
-    st.write("本應用展示如何在 Streamlit 中顯示即時攝影機影像。")
-    
-    # 方法一：啟動攝影機
-    webrtc_streamer(key="example", mode=WebRtcMode.SENDRECV)
-    
-    # 方法二：啟動 OpenCV 攝影機擷取
-    cap = cv2.VideoCapture(0)
-    
-    stframe = st.empty()  # 用於動態顯示影像的占位符
-    
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            st.error("無法讀取攝影機影像")
-            break
-        
-        # OpenCV 的 BGR 格式轉換為 RGB 格式
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        
-        # 使用 Streamlit 顯示影像
-        stframe.image(frame, channels="RGB", use_column_width=True)
-    
-    # 釋放攝影機資源
-    cap.release()
-
-if __name__ == "__main__":
-    main()
